@@ -16,9 +16,11 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return SizedBox(
-      width: 60,
-      height: 60,
+      width: screenWidth * 0.20,
+      height: screenHeight * 0.1,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
@@ -31,7 +33,7 @@ class MyButton extends StatelessWidget {
             text,
             style: TextStyle(
               color: textColor,
-              fontWeight: FontWeight.bold,
+              fontSize: screenWidth * 0.1,
             ),
             textAlign: TextAlign.center,
           ),

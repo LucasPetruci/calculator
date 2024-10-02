@@ -15,8 +15,12 @@ class MyDisplay extends StatelessWidget {
     final Color backgroundColor = isDarkMode ? Colors.black : Colors.white;
     final Color textColor = isDarkMode ? Colors.white : Colors.black;
 
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+
     return Container(
-      width: 250,
+      width: screenWidth,
+      height: screenHeight * 0.15,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: backgroundColor,
@@ -24,11 +28,11 @@ class MyDisplay extends StatelessWidget {
       child: Text(
         displayText,
         style: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
+          fontSize: screenWidth * 0.15,
           color: textColor,
         ),
         textAlign: TextAlign.right,
+        maxLines: 1,
       ),
     );
   }
