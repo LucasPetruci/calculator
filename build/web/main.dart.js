@@ -40325,7 +40325,7 @@ A.n2.prototype={
 al(){return new A.Ms(B.k)}}
 A.Ms.prototype={
 L(a){var s=null,r=A.a1m(a,t.l1),q=A.a1m(a,t.eC),p=q.a===B.hc,o=p?B.ez:B.Gf,n=p?B.AQ:B.AM,m=p?B.m:B.lo,l=p?B.j:B.m,k=p?B.m:B.j,j=t.E
-return A.alO(A.aiV(A.b([A.ag6(s,A.ag5(p?B.Co:B.Cp,s),new A.a9d(q),s,s)],j),k,B.OF),k,A.j8(A.uC(A.b([new A.Gv(r.a,s),A.o_(A.b([new A.cK("\u221a",l,o,new A.a9e(r),s),new A.cK("+/-",l,o,new A.a9f(r),s),new A.cK("%",l,o,new A.a9q(r),s),new A.cK("x",l,n,new A.a9r(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("7",l,m,new A.a9s(r),s),new A.cK("8",l,m,new A.a9t(r),s),new A.cK("9",l,m,new A.a9u(r),s),new A.cK("\xf7",l,n,new A.a9v(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("4",l,m,new A.a9w(r),s),new A.cK("5",l,m,new A.a9x(r),s),new A.cK("6",l,m,new A.a9g(r),s),new A.cK("-",l,n,new A.a9h(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("1",l,m,new A.a9i(r),s),new A.cK("2",l,m,new A.a9j(r),s),new A.cK("3",l,m,new A.a9k(r),s),new A.cK("+",l,n,new A.a9l(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("AC",l,n,new A.a9m(r),s),new A.cK("0",l,m,new A.a9n(r),s),new A.cK(",",l,m,new A.a9o(r),s),new A.cK("=",l,n,new A.a9p(r),s)],j),B.aw,B.bc,B.bd)],j),B.aw,B.bc,B.bd),s,s))}}
+return A.alO(A.aiV(A.b([A.ag6(s,A.ag5(p?B.Co:B.Cp,s),new A.a9d(q),s,s)],j),k,B.OC),k,A.j8(A.uC(A.b([new A.Gv(r.a,s),A.o_(A.b([new A.cK("\u221a",l,o,new A.a9e(r),s),new A.cK("+/-",l,o,new A.a9f(r),s),new A.cK("%",l,o,new A.a9q(r),s),new A.cK("x",l,n,new A.a9r(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("7",l,m,new A.a9s(r),s),new A.cK("8",l,m,new A.a9t(r),s),new A.cK("9",l,m,new A.a9u(r),s),new A.cK("\xf7",l,n,new A.a9v(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("4",l,m,new A.a9w(r),s),new A.cK("5",l,m,new A.a9x(r),s),new A.cK("6",l,m,new A.a9g(r),s),new A.cK("-",l,n,new A.a9h(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("1",l,m,new A.a9i(r),s),new A.cK("2",l,m,new A.a9j(r),s),new A.cK("3",l,m,new A.a9k(r),s),new A.cK("+",l,n,new A.a9l(r),s)],j),B.aw,B.bc,B.bd),A.o_(A.b([new A.cK("AC",l,n,new A.a9m(r),s),new A.cK("0",l,m,new A.a9n(r),s),new A.cK(",",l,m,new A.a9o(r),s),new A.cK("=",l,n,new A.a9p(r),s)],j),B.aw,B.bc,B.bd)],j),B.aw,B.bc,B.bd),s,s))}}
 A.a9d.prototype={
 $0(){var s=this.a
 s.a=s.a===B.k0?B.hc:B.k0
@@ -41742,7 +41742,7 @@ A.zm.prototype={
 XP(a,b,c){var s,r=null
 if(b==null)return B.ae
 s=A.lo(b,1,B.b5,r,r)
-return new A.i1(B.hD,1,r,b.length>12?B.OC:s,r)},
+return new A.i1(B.hD,1,r,b.length>12?B.OD:s,r)},
 L(a){var s=this.d
 if(s instanceof A.k7&&!s.gwz()){s.toString
 s=t.My.a(s).wa$
@@ -74002,7 +74002,7 @@ A.P6.prototype={}
 A.pD.prototype={
 L(a){var s=null,r=this.c
 r=r==null?s:"GoException: "+r.a
-return A.agD(!0,A.j8(A.uC(A.b([B.OE,B.xm,A.lo(r==null?"page not found":r,s,s,s,s),B.xm,new A.zr(new A.WH(a),B.OD,s)],t.E),B.aw,B.bc,B.bd),s,s),!0)}}
+return A.agD(!0,A.j8(A.uC(A.b([B.OF,B.xm,A.lo(r==null?"page not found":r,s,s,s,s),B.xm,new A.zr(new A.WH(a),B.OE,s)],t.E),B.aw,B.bc,B.bd),s,s),!0)}}
 A.WH.prototype={
 $0(){return A.ag3(this.a).y5("/",null)},
 $S:0}
@@ -79489,12 +79489,12 @@ B.NQ=new A.r(!0,B.A,null,"Roboto",B.F,null,null,null,null,null,null,null,null,nu
 B.Ni=new A.r(!0,B.m,null,"Roboto",B.F,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelMedium",null,null,null,null)
 B.Ns=new A.r(!0,B.m,null,"Roboto",B.F,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"blackHelsinki labelSmall",null,null,null,null)
 B.OB=new A.dM(B.O8,B.LO,B.MB,B.Nh,B.Nu,B.Lk,B.Mf,B.Lo,B.N4,B.NG,B.MI,B.NH,B.NQ,B.Ni,B.Ns)
-B.OC=new A.hK("Back",null,null,null,null,null,null)
+B.OC=new A.hK("Calculadora Flutter",null,null,null,null,null,null)
+B.OD=new A.hK("Back",null,null,null,null,null,null)
 B.Ly=new A.r(!0,B.j,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.OD=new A.hK("Go to home page",null,B.Ly,null,null,null,null)
-B.OE=new A.hK("Page Not Found",null,B.hb,null,null,null,null)
+B.OE=new A.hK("Go to home page",null,B.Ly,null,null,null,null)
+B.OF=new A.hK("Page Not Found",null,B.hb,null,null,null,null)
 B.xF=new A.hK("Home",null,null,null,null,null,null)
-B.OF=new A.hK("Calculadora",null,null,null,null,null,null)
 B.OG=new A.yV(0,"system")
 B.k0=new A.yV(1,"light")
 B.hc=new A.yV(2,"dark")
