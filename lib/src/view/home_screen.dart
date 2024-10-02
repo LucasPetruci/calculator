@@ -39,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: backgroundColor,
-        title: const Text('Calculadora'),
+        title: const Text('Calculadora Flutter'),
         actions: [
           IconButton(
             icon: Icon(themeProvider.themeMode == ThemeMode.dark
