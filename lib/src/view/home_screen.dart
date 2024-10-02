@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../components/display.dart';
 import '../provider/display_provider.dart';
+import '../provider/theme_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,10 +21,35 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final displayProvider = Provider.of<DisplayProvider>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
+    final bool isDarkMode = themeProvider.themeMode == ThemeMode.dark;
+    final Color primaryButtonColor =
+        isDarkMode ? Colors.grey[700]! : Colors.grey;
+    final Color secondaryButtonColor =
+        isDarkMode ? Colors.orange[400]! : Colors.orange[700]!;
+    final Color thirdButtonColor =
+        isDarkMode ? Colors.black : Colors.grey[200]!;
+
+    final Color textColor = isDarkMode ? Colors.white : Colors.black;
+
+    final Color backgroundColor = isDarkMode ? Colors.black : Colors.white;
 
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
+        backgroundColor: backgroundColor,
         title: const Text('Calculadora'),
+        actions: [
+          IconButton(
+            icon: Icon(themeProvider.themeMode == ThemeMode.dark
+                ? Icons.dark_mode
+                : Icons.light_mode),
+            onPressed: () {
+              themeProvider.toggleTheme();
+            },
+          )
+        ],
       ),
       body: Center(
         child: Column(
@@ -38,32 +64,32 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 MyButton(
                   text: '√',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: primaryButtonColor,
                   onPressed: () {
-                    displayProvider.addText('√');
+                    displayProvider.calculateSquareRoot();
                   },
                 ),
                 MyButton(
-                  text: '±',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  text: '+/-',
+                  textColor: textColor,
+                  backgroundColor: primaryButtonColor,
                   onPressed: () {
                     displayProvider.toggleSign();
                   },
                 ),
                 MyButton(
                   text: '%',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: primaryButtonColor,
                   onPressed: () {
                     displayProvider.addText('%');
                   },
                 ),
                 MyButton(
                   text: 'x',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.addText('x');
                   },
@@ -75,32 +101,32 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 MyButton(
                   text: '7',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('7');
                   },
                 ),
                 MyButton(
                   text: '8',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('8');
                   },
                 ),
                 MyButton(
                   text: '9',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('9');
                   },
                 ),
                 MyButton(
                   text: '÷',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.addText('÷');
                   },
@@ -112,32 +138,32 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 MyButton(
                   text: '4',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('4');
                   },
                 ),
                 MyButton(
                   text: '5',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('5');
                   },
                 ),
                 MyButton(
                   text: '6',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('6');
                   },
                 ),
                 MyButton(
                   text: '-',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.addText('-');
                   },
@@ -149,70 +175,69 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 MyButton(
                   text: '1',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('1');
                   },
                 ),
                 MyButton(
                   text: '2',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('2');
                   },
                 ),
                 MyButton(
                   text: '3',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('3');
                   },
                 ),
                 MyButton(
                   text: '+',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.addText('+');
                   },
                 ),
               ],
             ),
-            SizedBox(height: 2),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 MyButton(
                   text: 'AC',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.clearDisplay();
                   },
                 ),
                 MyButton(
                   text: '0',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText('0');
                   },
                 ),
                 MyButton(
                   text: ',',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.black,
+                  textColor: textColor,
+                  backgroundColor: thirdButtonColor,
                   onPressed: () {
                     displayProvider.addText(',');
                   },
                 ),
                 MyButton(
                   text: '=',
-                  textColor: Colors.white,
-                  backgroundColor: Colors.orange,
+                  textColor: textColor,
+                  backgroundColor: secondaryButtonColor,
                   onPressed: () {
                     displayProvider.calculteResult();
                   },
