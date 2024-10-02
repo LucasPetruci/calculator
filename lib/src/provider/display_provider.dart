@@ -1,5 +1,6 @@
 import 'package:expressions/expressions.dart';
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class DisplayProvider extends ChangeNotifier {
   String _displayText = '';
@@ -39,8 +40,28 @@ class DisplayProvider extends ChangeNotifier {
       if (_displayText.isEmpty) {
         return;
       }
-      double curretValue = double.parse(_displayText);
+      String displayValue = _displayText.replaceAll(',', '.');
+      double curretValue = double.parse(displayValue);
       curretValue = -curretValue;
+      _displayText = curretValue.toString();
+    } catch (e) {
+      _displayText = 'Error';
+    }
+    notifyListeners();
+  }
+
+  void calculateSquareRoot() {
+    try {
+      if (_displayText.isEmpty) {
+        return;
+      }
+      String displayValue = _displayText.replaceAll(',', '.');
+      double curretValue = double.parse(displayValue);
+      if (curretValue < 0) {
+        _displayText = 'Error';
+        return;
+      }
+      curretValue = sqrt(curretValue);
       _displayText = curretValue.toString();
     } catch (e) {
       _displayText = 'Error';
