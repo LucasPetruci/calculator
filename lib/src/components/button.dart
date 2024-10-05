@@ -18,9 +18,18 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
+    double width, height;
+    if (screenHeight > screenWidth) {
+      width = screenWidth * 0.2;
+      height = screenHeight * 0.1;
+    } else {
+      width = screenWidth * 0.1;
+      height = screenHeight * 0.1;
+    }
     return SizedBox(
-      width: screenWidth * 0.20,
-      height: screenHeight * 0.1,
+      width: width,
+      height: height,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,

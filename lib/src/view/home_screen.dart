@@ -38,6 +38,15 @@ class _HomeScreenState extends State<HomeScreen> {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
+    final double padding;
+    if (screenWidth < 400) {
+      padding = 0.01;
+    } else if (screenWidth < 600) {
+      padding = 0.02;
+    } else {
+      padding = 0.03;
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       appBar: AppBar(
@@ -54,227 +63,233 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              MyDisplay(
-                displayText: displayProvider.displayText,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyButton(
-                    text: '√',
-                    textColor: textColor,
-                    backgroundColor: primaryButtonColor,
-                    onPressed: () {
-                      displayProvider.calculateSquareRoot();
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '+/-',
-                    textColor: textColor,
-                    backgroundColor: primaryButtonColor,
-                    onPressed: () {
-                      displayProvider.toggleSign();
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '%',
-                    textColor: textColor,
-                    backgroundColor: primaryButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('%');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: 'x',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('x');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                ],
-              ),
-              SizedBox(height: screenHeight * 0.01),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyButton(
-                    text: '7',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('7');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '8',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('8');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '9',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('9');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '÷',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('÷');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                ],
-              ),
-              SizedBox(height: screenHeight * 0.01),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyButton(
-                    text: '4',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('4');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '5',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('5');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '6',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('6');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '-',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('-');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                ],
-              ),
-              SizedBox(height: screenHeight * 0.01),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyButton(
-                    text: '1',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('1');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '2',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('2');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '3',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('3');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '+',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('+');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                ],
-              ),
-              SizedBox(height: screenHeight * 0.01),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  MyButton(
-                    text: 'AC',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.clearDisplay();
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '0',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText('0');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: ',',
-                    textColor: textColor,
-                    backgroundColor: thirdButtonColor,
-                    onPressed: () {
-                      displayProvider.addText(',');
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                  MyButton(
-                    text: '=',
-                    textColor: textColor,
-                    backgroundColor: secondaryButtonColor,
-                    onPressed: () {
-                      displayProvider.calculteResult();
-                    },
-                  ),
-                  SizedBox(width: screenWidth * 0.01),
-                ],
-              ),
-            ],
+      body: Column(
+        children: [
+          SizedBox(
+            height: screenHeight * 0.2,
+            child: MyDisplay(
+              displayText: displayProvider.displayText,
+            ),
           ),
-        ),
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyButton(
+                      text: '√',
+                      textColor: textColor,
+                      backgroundColor: primaryButtonColor,
+                      onPressed: () {
+                        displayProvider.calculateSquareRoot();
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '+/-',
+                      textColor: textColor,
+                      backgroundColor: primaryButtonColor,
+                      onPressed: () {
+                        displayProvider.toggleSign();
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '%',
+                      textColor: textColor,
+                      backgroundColor: primaryButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('%');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: 'x',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('x');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                  ],
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyButton(
+                      text: '7',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('7');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '8',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('8');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '9',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('9');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '÷',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('÷');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                  ],
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyButton(
+                      text: '4',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('4');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '5',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('5');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '6',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('6');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '-',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('-');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                  ],
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyButton(
+                      text: '1',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('1');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '2',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('2');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '3',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('3');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '+',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('+');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                  ],
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyButton(
+                      text: 'AC',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.clearDisplay();
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '0',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText('0');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: ',',
+                      textColor: textColor,
+                      backgroundColor: thirdButtonColor,
+                      onPressed: () {
+                        displayProvider.addText(',');
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                    MyButton(
+                      text: '=',
+                      textColor: textColor,
+                      backgroundColor: secondaryButtonColor,
+                      onPressed: () {
+                        displayProvider.calculteResult();
+                      },
+                    ),
+                    SizedBox(width: screenWidth * 0.01),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

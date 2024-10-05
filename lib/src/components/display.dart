@@ -12,27 +12,34 @@ class MyDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
     final bool isDarkMode = themeProvider.themeMode == ThemeMode.dark;
-    final Color backgroundColor = isDarkMode ? Colors.black : Colors.white;
     final Color textColor = isDarkMode ? Colors.white : Colors.black;
 
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
-    return Container(
+    double fontSize;
+
+    if (screenHeight > screenWidth) {
+      fontSize = screenWidth * 0.1;
+    } else {
+      fontSize = screenHeight * 0.08;
+    }
+
+    return SizedBox(
       width: screenWidth,
-      height: screenHeight * 0.15,
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-      ),
-      child: Text(
-        displayText,
-        style: TextStyle(
-          fontSize: screenWidth * 0.15,
-          color: textColor,
+      height: screenHeight * 0.2,
+      child: Align(
+        alignment: Alignment.centerRight,
+        child: Text(
+          displayText,
+          style: TextStyle(
+            fontSize: fontSize,
+            color: textColor,
+          ),
+          textAlign: TextAlign.right,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
         ),
-        textAlign: TextAlign.right,
-        maxLines: 1,
       ),
     );
   }
