@@ -1,66 +1,33 @@
-# Calculadora Flutter
+# Calculadora em Flutter 🧮
 
-Uma calculadora simples desenvolvida com Flutter, utilizando **Provider** para gerenciamento de estado e **GoRouter** para navegação. O aplicativo suporta **Dark Mode** e **Light Mode**, permitindo que o usuário alterne entre os temas dinamicamente.
+Este é um aplicativo de calculadora desenvolvido em **Flutter**, projetado para fornecer uma interface intuitiva e responsiva para operações matemáticas básicas.
 
 ## Funcionalidades
 
-- Operações básicas: adição, subtração, multiplicação, divisão.
-- Botões especiais como: **√** (raiz quadrada), **±** (inverter sinal), **%** (porcentagem).
-- Alternância entre **modo escuro** e **modo claro**.
-- Interface responsiva para diferentes tamanhos de dispositivos.
-- Gerenciamento de estado com **Provider**.
-- Navegação usando **GoRouter**.
+- **Operações Básicas**: Suporta adição, subtração, multiplicação e divisão.
+- **Botões Especiais**: Inclui funções como raiz quadrada (√), inversão de sinal (±) e porcentagem (%).
+- **Alternância de Tema**: Permite ao usuário alternar entre modos claro e escuro dinamicamente.
+- **Interface Responsiva**: Adapta-se a diferentes tamanhos de dispositivos, garantindo uma experiência consistente.
+- **Gerenciamento de Estado**: Utiliza o Provider para gerenciamento eficiente do estado da aplicação.
+- **Navegação**: Implementa o GoRouter para navegação simplificada entre telas.
 
 ## Tecnologias Utilizadas
 
-### Frontend
-- **Flutter**: Framework principal para desenvolvimento do app.
-- **Dart**: Linguagem de programação usada para desenvolver o app.
+- **Flutter**: Framework para desenvolvimento multiplataforma.
+- **Dart**: Linguagem de programação utilizada pelo Flutter.
+- **Provider**: Gerenciamento de estado reativo.
+- **GoRouter**: Biblioteca para navegação declarativa.
 
-### Gerenciamento de Estado
-- **Provider**: Usado para gerenciar o estado da calculadora e o tema (dark/light mode).
+## Demonstração
 
-### Navegação
-- **GoRouter**: Usado para gerenciar as rotas e navegação dentro do aplicativo.
+Você pode acessar a versão online do aplicativo através deste link:
 
-## Como Rodar o Projeto
+[Calculadora Online](https://virtual-cell-phone.vercel.app/app/Calculadora)
 
-### Pré-requisitos:
-- Ter o **Flutter** instalado. Você pode seguir as instruções de instalação no [site oficial do Flutter](https://flutter.dev/docs/get-started/install).
-- Um editor de texto como **VSCode** ou **Android Studio**.
+**Nota**: A versão web pode apresentar limitações em comparação com a versão mobile.
 
-### Instalar dependências:
-1. Clone este repositório:
-    ```bash
-    git clone https://github.com/LucasPetruci/calculator
-    ```
-2. Navegue até o diretório do projeto:
-    ```bash
-    cd seu-repositorio
-    ```
-3. Instale as dependências:
-    ```bash
-    flutter pub get
-    ```
-
-### Rodar o projeto:
-1. Inicie o aplicativo em um emulador ou dispositivo físico conectado:
-    ```bash
-    flutter run
-    ```
-
-## Estrutura de Pastas
-
-```bash
-lib/
-│
-├── src/
-│   ├── components/
-│   │   ├── button.dart          # Componente de botão personalizado
-│   │   └── display.dart         # Componente de display da calculadora
-│   ├── provider/
-│   │   ├── display_provider.dart # Gerenciamento de estado da calculadora
-│   │   └── theme_provider.dart   # Gerenciamento do tema (dark/light mode)
-│   └── view/
-│       └── home_screen.dart      # Tela principal da calculadora
-└── main.dart                     # Arquivo principal do app
+## Capturas de Tela
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/212839c0-2eda-4604-8d77-fc6416b506f7" alt="Modo Claro" width="250"/>
+  <img src="https://github.com/user-attachments/assets/5133e2f1-26d7-4c10-b869-ff647afd00e9" alt="Modo Escuro" width="250"/>
+</p>
