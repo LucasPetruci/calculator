@@ -24,8 +24,6 @@ Você pode acessar a versão online do aplicativo através deste link:
 
 [Calculadora Online](https://virtual-cell-phone.vercel.app/app/Calculadora)
 
-**Nota**: A versão web pode apresentar limitações em comparação com a versão mobile.
-
 ## Capturas de Tela
 <p align="center">
   <img src="https://github.com/user-attachments/assets/212839c0-2eda-4604-8d77-fc6416b506f7" alt="Modo Claro" width="250"/>
